@@ -1,70 +1,105 @@
-# Getting Started with Create React App
+# TP React - Création d'une application avec des composants fonctionnels
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Objectif
+Ce TP vise à consolider les connaissances en React par la création d'une petite application étape par étape. À la fin de ce TP, vous serez capable de :
 
-## Available Scripts
+- Initialiser un projet React avec Create React App
+- Créer et intégrer des composants fonctionnels avec JSX
+- Utiliser les props pour transmettre des données entre composants
+- Structurer efficacement une application React
 
-In the project directory, you can run:
+## Étapes réalisées
 
-### `npm start`
+### Étape 1 : Préparation de l'environnement
+-  Installation de Node.js v22.21.0 et npm v10.9.4
+-  Création du projet React avec `npx create-react-app tp-react`
+-  Démarrage du serveur de développement
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Étape 2 : Composants fonctionnels simples
+-  Création du composant `HelloWorld` affichant un message simple
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Étape 3 : Utilisation des props
+-  Création du composant `Greeting` qui prend une prop `prenom`
+-  Affichage de messages personnalisés
 
-### `npm test`
+### Étape 4 : Composants avancés avec PropTypes
+-  Installation de la bibliothèque `prop-types`
+-  Création du composant `Profil` avec validation des props
+-  Utilisation d'images et de props par défaut
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Étape 5 : Exercices pratiques
+-  Création du composant `Voiture` avec validation des props
+-  Création du composant `ListeCourses` pour afficher des listes dynamiques
 
-### `npm run build`
+##  Structure du projet
+```mermaid
+graph TD
+    A[src/] --> B[App.js]
+    A --> C[ HelloWorld.js]
+    A --> D[ Greeting.js]
+    A --> E[ Profil.js]
+    A --> F[ Voiture.js]
+    A --> G[ ListeCourses.js]
+    A --> H[ index.js]
+    A --> I[ App.css]
+    
+    style A fill:#2e86ab,color:white,stroke:#1a536b,stroke-width:3px
+    style B fill:#a23b72,color:white,stroke:#7d2a58
+    style C fill:#f18f01,color:white,stroke:#c46f00
+    style D fill:#c73e1d,color:white,stroke:#9a3016
+    style E fill:#3b8ea5,color:white,stroke:#2c6a7d
+    style F fill:#47a8bd,color:white,stroke:#368192
+    style G fill:#6a994e,color:white,stroke:#52773d
+    style H fill:#bc4749,color:white,stroke:#953638
+    style I fill:#e6af2e,color:white,stroke:#b88a24
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+##  Composants créés
+### HelloWorld
+```jsx
+<HelloWorld />
+```
+Affiche un simple message "Hello World !"
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Greeting
+```jsx
+<Greeting prenom="Alice" />
+```
+Affiche un message personnalisé avec le prénom passé en prop.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Profil
+```jsx
+<Profil utilisateur={{nom: 'Emma', photo: '/user.png'}} taille={150} />
+```
+Affiche une image de profil avec validation des types.
 
-### `npm run eject`
+### Voiture
+```jsx
+<Voiture marque="Renault" modele="Clio" couleur="rouge" />
+```
+Affiche les informations d'une voiture avec validation des props.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### ListeCourses
+```jsx
+<ListeCourses elements={['Pommes', 'Bananes', 'Lait']} />
+```
+Affiche une liste dynamique d'éléments.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<img width="940" height="433" alt="image" src="https://github.com/user-attachments/assets/e8642843-72cc-43ac-a81c-ef390b01d250" />
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Lancement du projet
 
-## Learn More
+#### Installation des dépendances
+npm install
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+#### Démarrage du serveur de développement
+npm start
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+#### Construction pour la production
+npm run build
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Auteur
+**Arroche Aya**
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
